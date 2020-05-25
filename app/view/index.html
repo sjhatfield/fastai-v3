@@ -1,41 +1,85 @@
 <html lang='en'>
+
 <head>
   <meta charset='utf-8'>
   <link rel='stylesheet' href='../static/style.css'>
   <script src='../static/client.js'></script>
 </head>
+
 <body>
-<div>
-  <div class='center'>
-    <div class='title'>Classify Bear Images 🐻</div>
-    <p>
-      Use images of <strong>teddy</strong> bears, <strong>black</strong> bears, <strong>grizzly</strong> bears, or
-      all three!
-    </p>
-    <div class='content'>
-      <div class='no-display'>
-        <input id='file-input'
-               class='no-display'
-               type='file'
-               name='file'
-               accept='image/*'
-               onchange='showPicked(this)'>
+  <div>
+    <div class='center'>
+      <div class='title'>Classify Filipino Food Images</div>
+      <p>
+        Use images of Filipino food! There are currently 43 kinds of
+        Filipino foods that can be classified. Check the bottom of the page for a list.
+      </p>
+      <div class='content'>
+        <div class='no-display'>
+          <input id='file-input' class='no-display' type='file' name='file' accept='image/*'
+            onchange='showPicked(this)'>
+        </div>
+        <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
+        <div class='upload-label'>
+          <label id='upload-label'>No file chosen</label>
+        </div>
+        <div>
+          <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
+        </div>
+        <div class='analyze'>
+          <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
+        </div>
+        <div class='result-label'>
+          <label id='result-label'></label>
+        </div>
       </div>
-      <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
-      <div class='upload-label'>
-        <label id='upload-label'>No file chosen</label>
-      </div>
-      <div>
-        <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
-      </div>
-      <div class='analyze'>
-        <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
-      </div>
-      <div class='result-label'>
-        <label id='result-label'></label>
-      </div>
+      <p> Here are the types of Filipino foods able to be classified:
+        "lumpia",
+        "sinigang",
+        "afritada",
+        "cassava_cake",
+        "pancit_palabok",
+        "ube_milkshake",
+        "pork_adobo",
+        "chicken_bistek",
+        "bistek_talagog",
+        "chicharon",
+        "bibingka",
+        "pork_sisig",
+        "kare-kare",
+        "halo-halo",
+        "lechon",
+        "kaldereta",
+        "arroz_caldo",
+        "longganisa",
+        "tocino",
+        "leche_flan",
+        "filipino_spaghetti",
+        "chicken_adobo",
+        "crispy_pata",
+        "chicken_inasal",
+        "bulalo",
+        "tinola",
+        "tapa",
+        "laing",
+        "pinakbet",
+        "bagnet",
+        "bicol_express",
+        "balut",
+        "kinilaw",
+        "liempo",
+        "champorado",
+        "buco_pie",
+        "turon",
+        "pandesal",
+        "taho",
+        "pancit_guisado",
+        "pork_barbecue",
+        "ginataang_gulay",
+        "lechon_kawali"
+      </p>
     </div>
   </div>
-</div>
 </body>
+
 </html>

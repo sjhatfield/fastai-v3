@@ -1,3 +1,11 @@
+# Filipino Food Classifier
+
+This is a homework from the fastai class: deep learning for coders. This is a web app which will classify uploaded images according to what type of Filipino food is shown in the image.
+
+# Original README.md below.
+
+
+
 # Starter for deploying [fast.ai](https://www.fast.ai) models on [Render](https://render.com)
 
 This repo can be used as a starting point to deploy [fast.ai](https://github.com/fastai/fastai) models on Render.

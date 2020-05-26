@@ -39,6 +39,12 @@ body {
     font-size: 20px;
 }
 
+.confidence-label {
+    margin-top: 0.5em;
+    padding: 10px;
+    font-size: 20px;
+}
+
 button.choose-file-button {
     width: 200px;
     height: 40px;

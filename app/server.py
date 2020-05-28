@@ -10,9 +10,9 @@ from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
 export_file_url = (
-    "https://drive.google.com/uc?export=download&id=1y2pC24vM-RmBPiNx99wjNsU2RUpzCoD6"
+    "https://drive.google.com/uc?export=download&id=140cBy4v2pekBIudZEMUryTE08_PYmb2P"
 )
-export_file_name = "filipino_food_model.pkl"
+export_file_name = "filipino_food_model_resnet34.pkl"
 
 classes = [
     "lumpia",
@@ -41,7 +41,7 @@ classes = [
     "chicken_inasal",
     "bulalo",
     "tinola",
-    "tapa",
+    "tapa",    del learn
     "laing",
     "pinakbet",
     "bagnet",

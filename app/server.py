@@ -9,10 +9,15 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = (
+export_file_url1 = (
     "https://drive.google.com/uc?export=download&id=1y2pC24vM-RmBPiNx99wjNsU2RUpzCoD6"
 )
-export_file_name = "filipino_food_model.pkl"
+export_file_name1 = "filipino_food_model.pkl"
+
+export_file_url2 = (
+    "https://drive.google.com/uc?export=download&id=140cBy4v2pekBIudZEMUryTE08_PYmb2P"
+)
+export_file_name2 = "filipino_food_model_resnet34.pkl"
 
 classes = [
     "lumpia",
@@ -80,11 +85,13 @@ async def download_file(url, dest):
                 f.write(data)
 
 
-async def setup_learner():
-    await download_file(export_file_url, path / export_file_name)
+async def setup_learners():
+    await download_file(export_file_url1, path / export_file_name1)
+    await download_file(export_file_url2, path / export_file_name2)
     try:
-        learn = load_learner(path, export_file_name)
-        return learn
+        learn1 = load_learner(path, export_file_name1)
+        learn2 = load_learner(path, export_file_name2)
+        return learn1, learn2
     except RuntimeError as e:
         if len(e.args) > 0 and "CPU-only machine" in e.args[0]:
             print(e)
@@ -96,7 +103,7 @@ async def setup_learner():
 
 loop = asyncio.get_event_loop()
 tasks = [asyncio.ensure_future(setup_learner())]
-learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
+learn1, learn2 = loop.run_until_complete(asyncio.gather(*tasks))[0]
 loop.close()
 
 
@@ -111,10 +118,9 @@ async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data["file"].read())
     img = open_image(BytesIO(img_bytes))
-    result = learn.predict(img)
-    prediction = result[0]
-    confidence = max(result[2])
-    return JSONResponse({"result": str(prediction), "confidence": str(confidence)})
+    prediction1 = learn1.predict(img)[0]
+    prediction2 = learn2.predict(img)[0]
+    return JSONResponse({"result1": str(prediction1), "result2": str(prediction2)})
 
 
 if __name__ == "__main__":

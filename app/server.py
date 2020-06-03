@@ -41,7 +41,7 @@ classes = [
     "chicken_inasal",
     "bulalo",
     "tinola",
-    "tapa",    del learn
+    "tapa",
     "laing",
     "pinakbet",
     "bagnet",

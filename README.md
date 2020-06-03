@@ -1,8 +1,10 @@
 # Filipino Food Classifier
 
-This is a homework from the fastai class: deep learning for coders. This is a web app which will classify uploaded images according to what type of Filipino food is shown in the image.
+This is a homework from the fastai class: deep learning for coders. This web app which will classify uploaded images according to what type of Filipino food is shown in the image.
 
-# Original README.md below.
+[Check it out[(https://filipino-food-classifier.onrender.com/)
+
+# This is forked from the render-examples/fastai-v3. template. The original README.md is below.
 
 
 
